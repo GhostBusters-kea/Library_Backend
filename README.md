@@ -1,9 +1,9 @@
+# Gruppe 2 (Ghost Busters)
+
 ![GitHub repo size](https://img.shields.io/github/repo-size/GhostBusters-kea/Library_Backend)
 ![GitHub contributors](https://img.shields.io/github/contributors/GhostBusters-kea/Library_Backend)
 ![GitHub stars](https://img.shields.io/github/stars/GhostBusters-kea/Library_Backend)
 ![GitHub forks](https://img.shields.io/github/forks/GhostBusters-kea/Library_Backend)
-
-# Gruppe 2 (Ghost Busters)
 
 ## The easy one (Library)
 
