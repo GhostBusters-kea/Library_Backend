@@ -16,7 +16,7 @@ Branching Strategy:
 Feature Branching
 
 Link to deployed project:
-Add a link (when ready) to your deployed project
+https://kealibrary.azurewebsites.net
 
 Mini-sprint 1:
 
@@ -30,6 +30,9 @@ Michael Dyvad
 Kevin Funch
 
 Jonas Munk
+* Opsætning af CI/CD Pipeline på Azure med Github Actions som Build server
+* Opsætning af ssh adgang til Azure VM med Ubuntu server og Docker container som køre MySQL
+* Opsætning af forbindelse mellem App og MySQL server med miljø variabler 
 
 Lars Brogaard Kaiser
-Oprettet GitHub repo og updatet README
+* Oprettet GitHub repo og updatet README
