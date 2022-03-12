@@ -24,7 +24,10 @@ Feature Branching
 https://kealibrary.azurewebsites.net
 
 ### Mini-sprint 1:
-
+* Entities for Book, Library, Loan, Member og Reservation
+* Dto'er for Book, Library, Loan, Member og Reservation
+* Repo's for Book, Library, Loan, Member og Reservation
+* Service's for Book, Library, Loan, Member og Reservation
 
 
 ### Who Did What
