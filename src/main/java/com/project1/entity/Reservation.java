@@ -1,5 +1,7 @@
 package com.project1.entity;
 
+
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -7,8 +9,11 @@ import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+nitial
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+
+
 
 @Getter
 @Setter
@@ -23,6 +28,7 @@ public class Reservation {
 
     @CreationTimestamp
     private LocalDateTime reservationDate;
+
 
 
     @ManyToOne
@@ -44,3 +50,5 @@ public class Reservation {
     }
 
 }
+
+
