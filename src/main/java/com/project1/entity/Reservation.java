@@ -49,6 +49,10 @@ public class Reservation {
     // book.addReservation(this);
     }
 
+    public void setMember(Member member){
+        this.member=member;
+    }
+
 }
 
 
