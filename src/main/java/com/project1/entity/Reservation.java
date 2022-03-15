@@ -30,29 +30,30 @@ public class Reservation {
     private LocalDateTime reservationDate;
 
 
-
     @ManyToOne
     @JoinColumn(name = "username", referencedColumnName = "username")
     private Member member;
 
-    /*
+
     @ManyToOne
-    @JoinColumn(name="isbn", referenceColumnName = "isbn")
+    @JoinColumn(name="book_id", referencedColumnName = "id")
     private Book book;
 
-    */
 
-    public Reservation(Member member){
-    this.member=member;
-    // this.book=book;
-    member.addReservation(this);
-    // book.addReservation(this);
+
+    public Reservation(Member member,Book book) {
+        this.member = member;
+        this.book = book;
+        member.addReservation(this);
+        book.addReservation(this);
     }
+
 
     public void setMember(Member member){
         this.member=member;
     }
 
+    public void setBook(Book book){this.book=book;}
 }
 
 
