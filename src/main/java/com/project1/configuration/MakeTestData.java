@@ -1,6 +1,7 @@
 package com.project1.configuration;
 
 
+import com.project1.dto.LoanRequest;
 import com.project1.entity.Loan;
 import com.project1.entity.Member;
 import com.project1.entity.Reservation;
@@ -43,8 +44,9 @@ public class MakeTestData implements ApplicationRunner {
 
          */
 
+        LoanRequest loanRequest = new LoanRequest();
 
-        Loan newLoan = new Loan();
+        Loan newLoan = new Loan(loanRequest);
         loanRepository.save(newLoan);
 
 
