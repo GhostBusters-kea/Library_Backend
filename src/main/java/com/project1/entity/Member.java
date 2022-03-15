@@ -61,6 +61,16 @@ public class Member {
     )
     private Set<Reservation> reservations = new HashSet<>();
 
+    public Member(String username, String email, String password, String firstName, String lastName, String street, String city, String zip) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.street = street;
+        this.city = city;
+        this.zip = zip;
+    }
 
     public Member(MemberRequest body) {
         this.username = body.getUsername();

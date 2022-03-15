@@ -1,6 +1,8 @@
 package com.project1.configuration;
 
 
+import com.project1.entity.Member;
+import com.project1.entity.Reservation;
 import com.project1.repository.MemberRepository;
 import com.project1.repository.ReservationRepository;
 
@@ -23,13 +25,24 @@ public class MakeTestData implements ApplicationRunner {
     }
 
     public void makeData(){
+        Member a = new Member("ole","k@f.dk","djdj","Svend","Svendsen","Gade",
+                "by","1111");
+
+        Member b = new Member("ib","j@k.dk","jjj","Jens","Jensen",
+                "Gade","Kbh","1234");
+
+        memberRepository.save(a);
+
+
+        Reservation e = new Reservation(a);
+        reservationRepository.save(e);
 
 
     }
 
     @Override
     public void run(ApplicationArguments args){
-
+        reservationRepository.deleteAll();
         memberRepository.deleteAll();
         makeData();
     }
