@@ -7,7 +7,6 @@ import com.project1.repository.LibraryRepository;
 import lombok.*;
 
 import javax.persistence.*;
-import java.awt.print.Book;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,14 +23,13 @@ public class Library {
     @Column(length = 60)
     private String name;
 
-   /* @JsonIgnore
-    @OneToMany(mappedBy = "library", fetch = FetchType.EAGER)
-    private Set<Book> books = new HashSet<>();*/
+    @JsonIgnore
+    @OneToMany(mappedBy = "library", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Book> books = new HashSet<>();
 
     public Library(LibraryRequest body){
         this.id=body.getId();
         this.name= body.getName();
-        // this.books=body.getBooks()
     }
 
 }
