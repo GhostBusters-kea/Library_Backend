@@ -1,8 +1,17 @@
 package com.project1.configuration;
 
 
+
+import com.project1.entity.Loan;
+import com.project1.entity.Member;
+import com.project1.entity.Reservation;
+import com.project1.repository.LoanRepository;
+import com.project1.repository.MemberRepository;
+import com.project1.repository.ReservationRepository;
+
 import com.project1.entity.*;
 import com.project1.repository.*;
+
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -42,6 +51,7 @@ public class MakeTestData implements ApplicationRunner {
 
         Reservation e = new Reservation(a,ee);
         reservationRepository.save(e);
+
 
         Library l = new Library();
 

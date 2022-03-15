@@ -21,7 +21,6 @@ public class Loan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-
     //Skal gøres til foreign key, så hvert loan er til tildelt et memeber
     @ManyToOne
     @JoinColumn(name="username", referencedColumnName = "username")

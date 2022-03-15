@@ -4,6 +4,7 @@ import com.project1.dto.LoanRequest;
 import com.project1.dto.LoanResponse;
 import com.project1.entity.Loan;
 import com.project1.entity.Member;
+import com.project1.error.ClientException;
 import com.project1.repository.LoanRepository;
 import org.springframework.data.domain.Sort;
 
@@ -31,8 +32,14 @@ public class LoanService {
         return new LoanResponse(newCheckoutDate);
     }
 
-    public LoanResponse editLoan(LoanRequest body, int id){
-        return null;
+    public LoanResponse editLoan(LoanRequest body, int loanId){
+        if(!(loanRepository.existsById(loanId))){
+            throw new ClientException("No such loan exist");
+        }
+        Loan loanToEdit = new Loan(body);
+        loanToEdit.setId(loanId);
+        loanRepository.save(loanToEdit);
+        return new LoanResponse(loanToEdit);
     }
 
     public void deleteLoan(int loanId){
