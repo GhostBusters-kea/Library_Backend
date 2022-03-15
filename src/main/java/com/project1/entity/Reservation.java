@@ -9,7 +9,7 @@ import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-nitial
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
