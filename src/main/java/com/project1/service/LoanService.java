@@ -5,6 +5,7 @@ import com.project1.dto.LoanResponse;
 import com.project1.entity.Loan;
 import com.project1.entity.Member;
 import com.project1.repository.LoanRepository;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,15 +18,15 @@ public class LoanService {
     }
 
     //Skal gøres, så alle loans kan findes på et memberid
-    public List<LoanResponse> getAllLoansOnMember(LoanRequest username){
-        List<Loan> loans = loanRepository.findAll();
-        loans.stream().map(n -> username.getUsername());
+    public List<LoanResponse> getAllLoansOnMember(String username){
+        List<Loan> loans = loanRepository.findLoanByUsername(username);
         return LoanResponse.getLoansFromEntity(loans);
     }
 
     //Denne metode skal gerne kunne bruges til at tilføje individuelt dates
     public LoanResponse addDate(LoanRequest body, Member memberUsername){
         Loan newCheckoutDate = loanRepository.save(new Loan(body));
+        //Tror ikke linje 30 er nødvendig
         newCheckoutDate.setUsername(memberUsername);
         return new LoanResponse(newCheckoutDate);
     }
