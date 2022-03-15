@@ -53,13 +53,13 @@ public class Member {
     @UpdateTimestamp
     private LocalDateTime edited;
 
-//    @JsonIgnore
-//    @OneToMany(
-//            mappedBy = "member",
-//            cascade = CascadeType.ALL,
-//            orphanRemoval = true
-//    )
-//    private Set<Reservation> reservations = new HashSet<>();
+    @JsonIgnore
+    @OneToMany(
+            mappedBy = "member",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private Set<Reservation> reservations = new HashSet<>();
 
 
     public Member(MemberRequest body) {
@@ -71,5 +71,9 @@ public class Member {
         this.street = body.getStreet();
         this.city = body.getCity();
         this.zip = body.getZip();
+    }
+
+    public void addReservation(Reservation reservation){
+        reservations.add(reservation);
     }
 }
