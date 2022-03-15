@@ -6,11 +6,13 @@ import com.project1.entity.Library;
 import com.project1.error.ClientException;
 import com.project1.repository.LibraryRepository;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 // @Author LBK
+@Service
 public class LibraryService {
     LibraryRepository libraryRepository;
 
