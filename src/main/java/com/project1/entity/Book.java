@@ -45,8 +45,13 @@ public class Book {
     private LocalDateTime edited;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "book", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "book", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Reservation> reservations = new HashSet<>();
+
+    @JoinColumn(name = "book_id", referencedColumnName = "id")
+    @ManyToOne
+    private Library library;
+
 
     public Book(BookRequest body) {
         this.isbnNumber = body.getIsbnNumber();
