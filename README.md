@@ -29,6 +29,12 @@ https://kealibrary.azurewebsites.net
 * Repo's for Book, Library, Loan, Member og Reservation
 * Service's for Book, Library, Loan, Member og Reservation
 
+### Mini-sprint 2:
+* Api for alle entities
+* Tests af Services + Controllers
+* Sercurity og Validation i backend
+* Frontend med full CRUD + search/sort
+
 
 ### Who Did What
 Each member must come up with a short description when the final deadline is reached. Initially, Each of you should push a commit with just your name You should all add your GitHub usename in parenthesis next to your name, so I know who is who, when I check commit messages
@@ -41,6 +47,7 @@ Each member must come up with a short description when the final deadline is rea
 * Opsætning af CI/CD Pipeline på Azure med Github Actions som Build server
 * Opsætning af ssh adgang til Azure VM med Ubuntu server og Docker container som køre MySQL
 * Opsætning af forbindelse mellem App og MySQL server med miljø variabler 
+* Backend kode relateret til Member
 
 ##### Lars Brogaard Kaiser ([@mrbrogaardkaiser](https://github.com/mrbrogaardkaiser))
 * Oprettet GitHub repo og updatet README
