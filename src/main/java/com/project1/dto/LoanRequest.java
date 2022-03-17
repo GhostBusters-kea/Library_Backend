@@ -1,5 +1,6 @@
 package com.project1.dto;
 
+import com.project1.entity.Book;
 import com.project1.entity.Member;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,6 +16,8 @@ import java.time.LocalDateTime;
 public class LoanRequest {
 
     private Member username;
+
+    private Book bookId;
 
     private LocalDateTime checkoutdate;
 

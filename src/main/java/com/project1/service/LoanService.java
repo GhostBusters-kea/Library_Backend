@@ -6,11 +6,12 @@ import com.project1.entity.Loan;
 import com.project1.entity.Member;
 import com.project1.error.ClientException;
 import com.project1.repository.LoanRepository;
-import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class LoanService {
     LoanRepository loanRepository;
 
@@ -18,19 +19,33 @@ public class LoanService {
         this.loanRepository = loanRepository;
     }
 
+    public List<LoanResponse> getLoans(){
+        List<Loan> loans = loanRepository.findAll();
+        return LoanResponse.getLoansFromEntity(loans);
+    }
+
     //Skal gøres, så alle loans kan findes på et memberid
-    public List<LoanResponse> getAllLoansOnMember(String username){
-        List<Loan> loans = loanRepository.findLoanByUsername(username);
+    public List<LoanResponse> getAllLoansOnMember(String username) {
+        Member member = new Member(username);
+        List<Loan> loans = loanRepository.findAllLoanByUsername(member);
         return LoanResponse.getLoansFromEntity(loans);
     }
 
     //Denne metode skal gerne kunne bruges til at tilføje individuelt dates
-    public LoanResponse addDate(LoanRequest body, Member memberUsername){
+
+    public LoanResponse addLoan(LoanRequest body){
+        Loan newCheckoutDate = loanRepository.save(new Loan(body));
+        return new LoanResponse(newCheckoutDate);
+    }
+
+    /*
+    public LoanResponse addLoan(LoanRequest body, Member memberUsername){
         Loan newCheckoutDate = loanRepository.save(new Loan(body));
         //Tror ikke linje 30 er nødvendig
         newCheckoutDate.setUsername(memberUsername);
         return new LoanResponse(newCheckoutDate);
     }
+     */
 
     public LoanResponse editLoan(LoanRequest body, int loanId){
         if(!(loanRepository.existsById(loanId))){
@@ -43,6 +58,8 @@ public class LoanService {
     }
 
     public void deleteLoan(int loanId){
-        loanRepository.deleteById(loanId);
+        List<Loan> loanList = loanRepository.findById(loanId).stream().collect(Collectors.toList());
+        loanRepository.deleteAllById((Iterable<? extends Integer>) loanList.remove(loanId));
+
     }
 }

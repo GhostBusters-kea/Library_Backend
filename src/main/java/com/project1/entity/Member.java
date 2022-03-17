@@ -72,6 +72,10 @@ public class Member {
         this.zip = zip;
     }
 
+    public Member(String username){
+        this.username = username;
+    }
+
     public Member(MemberRequest body) {
         this.username = body.getUsername();
         this.email = body.getEmail();
