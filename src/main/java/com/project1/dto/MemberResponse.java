@@ -7,17 +7,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.UpdateTimestamp;
-
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.stream.Collectors;
+
 
 @Getter
 @Setter
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MemberResponse {
-    private String userName;
+    private String username;
     private String password;
     private String email;
     private String firstName;
@@ -33,13 +31,13 @@ public class MemberResponse {
 
     // Creation response
     public MemberResponse(String userName, LocalDateTime created) {
-        this.userName = userName;
+        this.username = userName;
         this.created = created;
     }
 
     // All details
     public MemberResponse(Member member) {
-        this.userName = member.getUsername();
+        this.username = member.getUsername();
         this.email = member.getEmail();
         this.firstName = member.getFirstName();
         this.lastName = member.getLastName();
