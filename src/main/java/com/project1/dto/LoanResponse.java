@@ -2,6 +2,7 @@ package com.project1.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.project1.entity.Book;
 import com.project1.entity.Loan;
 import com.project1.entity.Member;
 import lombok.Getter;
@@ -28,12 +29,15 @@ public class LoanResponse {
 
     private Member username;
 
+    private Book bookId;
+
     //Get all loan info
     public LoanResponse(Loan loan){
         this.checkoutdate = loan.getCheckoutdate();
         this.duedate = loan.getDuedate();
         this.returneddate = loan.getReturneddate();
         this.username = loan.getUsername();
+        this.bookId = loan.getBookId();
     }
 
     public static List<LoanResponse> getLoansFromEntity(List<Loan> loans){

@@ -4,12 +4,10 @@ package com.project1.configuration;
 
 import com.project1.entity.Loan;
 import com.project1.entity.Member;
-import com.project1.entity.Reservation;
 import com.project1.repository.LoanRepository;
 import com.project1.repository.MemberRepository;
 import com.project1.repository.ReservationRepository;
 
-import com.project1.entity.*;
 import com.project1.repository.*;
 
 
@@ -37,13 +35,12 @@ public class MakeTestData implements ApplicationRunner {
 
     public void makeData(){
 
-        /*Member a = new Member("ole","k@f.dk","djdj","Svend","Svendsen","Gade",
-                "by","1111");
+        /*
 
         Member b = new Member("ib","j@k.dk","jjj","Jens","Jensen",
                 "Gade","Kbh","1234");
 
-        memberRepository.save(a);
+
 
 
         Book ee= new Book();
@@ -58,6 +55,26 @@ public class MakeTestData implements ApplicationRunner {
         Loan newLoan = new Loan();
         loanRepository.save(newLoan);*/
 
+        /*
+        Member a = new Member("ole","k@f.dk","djdj","Svend","Svendsen","Gade",
+                "by","1111");
+        Member b = new Member("hans","123@f.dk","dj","dd","dd","dd",
+                "by","1112");
+        memberRepository.save(a);
+        memberRepository.save(b);
+
+        Loan newLoan = new Loan();
+        newLoan.setUsername(a);
+        loanRepository.save(newLoan);
+        Loan newLoan1 = new Loan();
+        newLoan1.setUsername(a);
+        loanRepository.save(newLoan1);
+        Loan newLoan3 = new Loan();
+        newLoan3.setUsername(b);
+        loanRepository.save(newLoan3);
+
+         */
+
     }
 
     @Override
@@ -66,7 +83,9 @@ public class MakeTestData implements ApplicationRunner {
         reservationRepository.deleteAll();
         memberRepository.deleteAll();
         bookRepository.deleteAll();
-        makeData();*/
+
+         */
+        makeData();
     }
 
 }

@@ -1,6 +1,5 @@
 package com.project1.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.project1.dto.LoanRequest;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,6 +9,8 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -26,6 +27,10 @@ public class Loan {
     @JoinColumn(name="username", referencedColumnName = "username")
     private Member username;
 
+    @ManyToOne
+    @JoinColumn(name="bookid", referencedColumnName = "id")
+    private Book bookId;
+
     //Auto set date when a loan is made
     @Column
     @CreationTimestamp
@@ -40,6 +45,7 @@ public class Loan {
 
     public Loan(LoanRequest body) {
         this.username = body.getUsername();
+        this.bookId = body.getBookId();
         this.checkoutdate = body.getCheckoutdate();
         this.duedate = body.getDuedate();
         this.returneddate = body.getReturneddate();
