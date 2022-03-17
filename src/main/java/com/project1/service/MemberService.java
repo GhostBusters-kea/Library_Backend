@@ -43,12 +43,12 @@ public class MemberService {
         return new MemberResponse(memberNew.getUsername(), memberNew.getCreated());
     }
 
-    public MemberResponse editMember(MemberRequest body, String userName){
-        if(!(memberRepository.existsById(userName))){
+    public MemberResponse editMember(MemberRequest body, String username){
+        if(!(memberRepository.existsById(username))){
             throw new ClientException("No Such member exists");
         }
         Member memberToEdit = new Member(body);
-        memberToEdit.setUsername(userName);
+        memberToEdit.setUsername(username);
         memberRepository.save(memberToEdit);
         return new MemberResponse(memberToEdit);
     }
