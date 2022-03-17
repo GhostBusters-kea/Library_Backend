@@ -32,4 +32,9 @@ public class Library {
         this.name= body.getName();
     }
 
+    public Library(String name){
+        this.name= name;
+    }
+
+    public void addBook(Book book){books.add(book);}
 }

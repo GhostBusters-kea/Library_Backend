@@ -48,10 +48,20 @@ public class Book {
     @OneToMany(mappedBy = "book", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Reservation> reservations = new HashSet<>();
 
-    @JoinColumn(name = "book_id", referencedColumnName = "id")
+    @JoinColumn(name = "library_id", referencedColumnName = "id")
     @ManyToOne
     private Library library;
 
+
+    public Book(String isbnNumber, String title, String authors, String publisher, String publishYear, Library library) {
+        this.isbnNumber = isbnNumber;
+        this.title = title;
+        this.authors = authors;
+        this.publisher = publisher;
+        this.publishYear = publishYear;
+        library.addBook(this);
+        this.setLibrary(library);
+    }
 
     public Book(BookRequest body) {
         this.isbnNumber = body.getIsbnNumber();
@@ -64,5 +74,7 @@ public class Book {
     //Mangler noget mapping
 
     public void addReservation(Reservation reservation){reservations.add(reservation);}
+
+    public void setLibrary(Library library){this.library=library;}
 
 }

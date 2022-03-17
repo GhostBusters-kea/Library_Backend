@@ -1,7 +1,7 @@
 package com.project1.configuration;
 
-
-
+import com.project1.entity.Book;
+import com.project1.entity.Library;
 import com.project1.entity.Loan;
 import com.project1.entity.Member;
 import com.project1.repository.LoanRepository;
@@ -9,8 +9,6 @@ import com.project1.repository.MemberRepository;
 import com.project1.repository.ReservationRepository;
 
 import com.project1.repository.*;
-
-
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Profile;
@@ -41,8 +39,6 @@ public class MakeTestData implements ApplicationRunner {
                 "Gade","Kbh","1234");
 
 
-
-
         Book ee= new Book();
         bookRepository.save(ee);
 
@@ -53,15 +49,29 @@ public class MakeTestData implements ApplicationRunner {
         Library l = new Library();
 
         Loan newLoan = new Loan();
-        loanRepository.save(newLoan);*/
+        loanRepository.save(newLoan);
 
-        /*
+
         Member a = new Member("ole","k@f.dk","djdj","Svend","Svendsen","Gade",
                 "by","1111");
         Member b = new Member("hans","123@f.dk","dj","dd","dd","dd",
                 "by","1112");
         memberRepository.save(a);
         memberRepository.save(b);
+
+        Library l = new Library("Vesterbro");
+
+        libraryRepository.save(l);
+
+        Book book = new Book("393939","Animal Farm","George Orwell",
+                "Gyldeldal","2020",l);
+
+        Book book2 = new Book("393949","1984","George Orwell",
+                "Gyldeldal","2020",l);
+
+
+        bookRepository.save(book);
+        bookRepository.save(book2);
 
         Loan newLoan = new Loan();
         newLoan.setUsername(a);
@@ -83,9 +93,8 @@ public class MakeTestData implements ApplicationRunner {
         reservationRepository.deleteAll();
         memberRepository.deleteAll();
         bookRepository.deleteAll();
-
-         */
-        makeData();
+        libraryRepository.deleteAll();
+        makeData();*/
     }
 
 }
