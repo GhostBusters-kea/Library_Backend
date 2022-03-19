@@ -3,7 +3,9 @@ package com.project1.service;
 import com.project1.dto.BookRequest;
 import com.project1.dto.BookResponse;
 import com.project1.entity.Book;
+import com.project1.error.ClientException;
 import com.project1.repository.BookRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,10 +30,12 @@ public class BookService {
     }
 
     //Tilføj fejlhåndtering
-    public BookResponse getBook (int id, boolean all){
+    public BookResponse getBook(int id, boolean all){
         Book book = bookRepository.findById(id).orElseThrow();
         return new BookResponse(book, false);
     }
+
+
 
     public BookResponse editBook(BookRequest bookToEdit, int id) {
         Book book = bookRepository.findById(id).orElseThrow();
@@ -40,6 +44,12 @@ public class BookService {
         book.setPublisher(bookToEdit.getPublisher());
         book.setPublishYear(bookToEdit.getPublishYear());
         return new BookResponse(bookRepository.save(book), true);
+    }
+
+
+    public Book getBookToReservation(int id){
+        Book book = bookRepository.findById(id).orElseThrow(()->new ClientException("Book not found", HttpStatus.NOT_FOUND));
+        return book;
     }
 
    /* public Book getBook(int id) {

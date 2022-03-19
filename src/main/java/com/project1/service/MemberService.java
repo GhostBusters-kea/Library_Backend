@@ -59,5 +59,10 @@ public class MemberService {
         }
         memberRepository.deleteById(username);
     }
+
+    public Member getMemberToReservation(String username){
+        return memberRepository.findById(username).orElseThrow(()-> new ClientException("Member not found",HttpStatus.NOT_FOUND));
+
+     }
 }
 
