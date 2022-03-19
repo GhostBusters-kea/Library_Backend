@@ -33,41 +33,61 @@ public class MakeTestData implements ApplicationRunner {
 
     public void makeData(){
 
-        /*
-
+        // Members
         Member b = new Member("ib","j@k.dk","jjj","Jens","Jensen",
                 "Gade","Kbh","1234");
 
+        Member a = new Member("ole","k@f.dk","djdj","Svend","Svendsen","Gade",
+                "by","1111");
+        Member c = new Member("hans","123@f.dk","dj","dd","dd","dd",
+                "by","1112");
 
-        Book ee= new Book();
-        bookRepository.save(ee);
+        // Libraries
+        Library l1 = new Library("Vesterbro");
+        Library l2 = new Library("Nørrebro");
+        Library l3 = new Library("Østerbro");
+        Library l4 = new Library("Amager");
+        Library l5 = new Library("Sydhavnen");
+        Library l6 = new Library("Nordvest");
 
-        Reservation e = new Reservation(a,ee);
-        reservationRepository.save(e);
+        libraryRepository.save(l1);
+        libraryRepository.save(l2);
+        libraryRepository.save(l3);
+        libraryRepository.save(l4);
+        libraryRepository.save(l5);
+        libraryRepository.save(l6);
 
 
-        Library l = new Library();
+        // Books
+
+        Book book = new Book("393939","Animal Farm","George Orwell",
+                "Gyldeldal","2020",l1);
+
+        Book book2 = new Book("393949","1984","George Orwell",
+                "Gyldeldal","2020",l1);
+
+
+
+        bookRepository.save(book);
+        bookRepository.save(book2);
+
+
+
+
+
+
+
+
+
+
 
         Loan newLoan = new Loan();
         loanRepository.save(newLoan);
 
+/*
 
-        Member a = new Member("ole","k@f.dk","djdj","Svend","Svendsen","Gade",
-                "by","1111");
-        Member b = new Member("hans","123@f.dk","dj","dd","dd","dd",
-                "by","1112");
         memberRepository.save(a);
         memberRepository.save(b);
-
-        Library l = new Library("Vesterbro");
-
-        libraryRepository.save(l);
-
-        Book book = new Book("393939","Animal Farm","George Orwell",
-                "Gyldeldal","2020",l);
-
-        Book book2 = new Book("393949","1984","George Orwell",
-                "Gyldeldal","2020",l);
 
 
         bookRepository.save(book);
@@ -89,12 +109,12 @@ public class MakeTestData implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args){
-        /*
+
         reservationRepository.deleteAll();
         memberRepository.deleteAll();
         bookRepository.deleteAll();
         libraryRepository.deleteAll();
-        makeData();*/
+        makeData();
     }
 
 }

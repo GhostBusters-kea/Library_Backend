@@ -4,6 +4,7 @@ import com.project1.dto.LibraryRequest;
 import com.project1.dto.LibraryResponse;
 import com.project1.dto.ReservationRequest;
 import com.project1.dto.ReservationResponse;
+import com.project1.entity.Book;
 import com.project1.entity.Library;
 import com.project1.entity.Reservation;
 import com.project1.error.ClientException;
@@ -52,6 +53,12 @@ public class ReservationService {
         return new ReservationResponse(reservation);
     }
 
+    public Reservation getReservationToAddMemberOrBook(int id){
+        Reservation reservation = reservationRepository.findById(id).orElseThrow(()->
+                new ClientException("Reservation not found", HttpStatus.NOT_FOUND));
+        return reservation;
+    }
+
     public ReservationResponse addReservation(ReservationRequest body){
         Reservation newReservation = reservationRepository.save(new Reservation(body));
         return new ReservationResponse(newReservation);
@@ -62,6 +69,10 @@ public class ReservationService {
             throw new ClientException("Reservation not found");
         }
         reservationRepository.deleteById(id);
+    }
+
+    public void saveReservation(Reservation reservation){
+        reservationRepository.save(reservation);
     }
 
 }
