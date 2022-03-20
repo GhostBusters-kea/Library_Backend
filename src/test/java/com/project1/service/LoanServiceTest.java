@@ -53,7 +53,7 @@ class LoanServiceTest {
     void getAllLoansOnMember() {
         List<LoanResponse> loanResponseList = loanService.getLoans();
         assertEquals(1, loanResponseList.size());
-        assertEquals("ole", loanResponseList.get(0).getMemberResponse().getUserName());
+        assertEquals("ole", loanResponseList.get(0).getMemberResponse().getUsername());
     }
 
     @Test
