@@ -42,7 +42,7 @@ public class Loan {
     @Column
     private LocalDateTime returneddate;
 
-
+    /*
     public Loan(LoanRequest body) {
         this.username = body.getUsername();
         this.bookId = body.getBookId();
@@ -50,4 +50,19 @@ public class Loan {
         this.duedate = body.getDuedate();
         this.returneddate = body.getReturneddate();
     }
+
+     */
+
+    public Loan(Member username, LocalDateTime duedate, LocalDateTime returneddate) {
+        this.username = username;
+        this.duedate = duedate;
+        this.returneddate = returneddate;
+    }
+
+    public Loan(LoanRequest body){
+        this.username = body.getUsername();
+        this.duedate = body.getDuedate();
+        this.returneddate = body.getReturneddate();
+    }
+
 }

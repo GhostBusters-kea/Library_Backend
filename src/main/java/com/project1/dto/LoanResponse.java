@@ -27,7 +27,7 @@ public class LoanResponse {
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss",shape = JsonFormat.Shape.STRING)
     private LocalDateTime returneddate;
 
-    private Member username;
+    private MemberResponse memberResponse;
 
     private Book bookId;
 
@@ -36,7 +36,7 @@ public class LoanResponse {
         this.checkoutdate = loan.getCheckoutdate();
         this.duedate = loan.getDuedate();
         this.returneddate = loan.getReturneddate();
-        this.username = loan.getUsername();
+        this.memberResponse = new MemberResponse(loan.getUsername());
         this.bookId = loan.getBookId();
     }
 

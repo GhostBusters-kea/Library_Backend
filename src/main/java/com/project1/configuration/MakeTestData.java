@@ -32,6 +32,7 @@ public class MakeTestData implements ApplicationRunner {
     }
 
     public void makeData(){
+        /*
 
         // Members
         Member b = new Member("ib","j@k.dk","jjj","Jens","Jensen",
@@ -66,6 +67,16 @@ public class MakeTestData implements ApplicationRunner {
         Book b1 = new Book("393939","Animal Farm","George Orwell",
                 "Gyldeldal","2020",l1);
 
+         */
+
+
+        /*
+        Member a = new Member("ole","k@f.dk","djdj","Svend","Svendsen","Gade",
+                "by","1111");
+        Member b = new Member("hans","123@f.dk","dj","dd","dd","dd",
+                "by","1112");
+        memberRepository.save(a);
+        memberRepository.save(b);
         Book b2 = new Book("393949","1984","George Orwell",
                 "Gyldeldal","2020",l1);
 
@@ -95,6 +106,7 @@ public class MakeTestData implements ApplicationRunner {
         r2.setMember(a);
         r3.setMember(b);
         r4.setMember(c);
+
 
         reservationService.saveReservation(r1);
         reservationService.saveReservation(r2);
@@ -127,6 +139,7 @@ public class MakeTestData implements ApplicationRunner {
         loanRepository.save(newLoan3);
 
          */
+
 
     }
 
