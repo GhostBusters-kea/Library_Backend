@@ -1,14 +1,12 @@
 package com.project1.configuration;
 
-import com.project1.entity.Book;
-import com.project1.entity.Library;
-import com.project1.entity.Loan;
-import com.project1.entity.Member;
+import com.project1.entity.*;
 import com.project1.repository.LoanRepository;
 import com.project1.repository.MemberRepository;
 import com.project1.repository.ReservationRepository;
 
 import com.project1.repository.*;
+import com.project1.service.ReservationService;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Profile;
@@ -22,32 +20,52 @@ public class MakeTestData implements ApplicationRunner {
     LoanRepository loanRepository;
     BookRepository bookRepository;
     LibraryRepository libraryRepository;
+    ReservationService reservationService;
 
-    public MakeTestData(ReservationRepository reservationRepository, MemberRepository memberRepository, LoanRepository loanRepository, BookRepository bookRepository, LibraryRepository libraryRepository) {
+    public MakeTestData(ReservationRepository reservationRepository, MemberRepository memberRepository, LoanRepository loanRepository, BookRepository bookRepository, LibraryRepository libraryRepository, ReservationService reservationService) {
         this.reservationRepository = reservationRepository;
         this.memberRepository = memberRepository;
         this.loanRepository = loanRepository;
         this.bookRepository = bookRepository;
         this.libraryRepository = libraryRepository;
+        this.reservationService = reservationService;
     }
 
     public void makeData(){
         /*
+
+        // Members
         Member b = new Member("ib","j@k.dk","jjj","Jens","Jensen",
                 "Gade","Kbh","1234");
 
+        Member a = new Member("ole","k@f.dk","djdj","Svend","Svendsen","Gade",
+                "by","1111");
+        Member c = new Member("hans","123@f.dk","dj","dd","dd","dd",
+                "by","1112");
 
-        Book ee= new Book();
-        bookRepository.save(ee);
+        memberRepository.save(a);
+        memberRepository.save(b);
+        memberRepository.save(c);
 
-        Reservation e = new Reservation(a,ee);
-        reservationRepository.save(e);
+        // Libraries
+        Library l1 = new Library("Vesterbro");
+        Library l2 = new Library("Nørrebro");
+        Library l3 = new Library("Østerbro");
+        Library l4 = new Library("Amager");
+        Library l5 = new Library("Sydhavnen");
+        Library l6 = new Library("Nordvest");
+
+        libraryRepository.save(l1);
+        libraryRepository.save(l2);
+        libraryRepository.save(l3);
+        libraryRepository.save(l4);
+        libraryRepository.save(l5);
+        libraryRepository.save(l6);
 
 
-        Library l = new Library();
-
-        Loan newLoan = new Loan();
-        loanRepository.save(newLoan);
+        // Books
+        Book b1 = new Book("393939","Animal Farm","George Orwell",
+                "Gyldeldal","2020",l1);
 
          */
 
@@ -59,16 +77,52 @@ public class MakeTestData implements ApplicationRunner {
                 "by","1112");
         memberRepository.save(a);
         memberRepository.save(b);
+        Book b2 = new Book("393949","1984","George Orwell",
+                "Gyldeldal","2020",l1);
 
-        Library l = new Library("Vesterbro");
+        Book b3= new Book("395549","Bla","George Orwell",
+                "Gyldeldal","2020",l1);
 
-        libraryRepository.save(l);
+        Book b4 = new Book("393999","Blabla","George Orwell",
+                "Gyldeldal","2020",l1);
 
-        Book book = new Book("393939","Animal Farm","George Orwell",
-                "Gyldeldal","2020",l);
+        bookRepository.save(b1);
+        bookRepository.save(b2);
+        bookRepository.save(b3);
+        bookRepository.save(b4);
 
-        Book book2 = new Book("393949","1984","George Orwell",
-                "Gyldeldal","2020",l);
+        // Reservations
+        Reservation r1 = new Reservation();
+        Reservation r2 = new Reservation();
+        Reservation r3 = new Reservation();
+        Reservation r4 = new Reservation();
+
+        r1.setBook(b1);
+        r2.setBook(b2);
+        r3.setBook(b3);
+        r4.setBook(b4);
+
+        r1.setMember(a);
+        r2.setMember(a);
+        r3.setMember(b);
+        r4.setMember(c);
+
+
+        reservationService.saveReservation(r1);
+        reservationService.saveReservation(r2);
+        reservationService.saveReservation(r3);
+        reservationService.saveReservation(r4);
+
+
+
+/*
+        Loan newLoan = new Loan();
+        loanRepository.save(newLoan);*/
+
+/*
+
+        memberRepository.save(a);
+        memberRepository.save(b);
 
 
         bookRepository.save(book);

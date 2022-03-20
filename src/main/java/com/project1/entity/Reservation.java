@@ -2,6 +2,7 @@ package com.project1.entity;
 
 
 
+import com.project1.dto.ReservationRequest;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,7 +22,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @ToString
 public class Reservation {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -46,6 +46,11 @@ public class Reservation {
         this.book = book;
         member.addReservation(this);
         book.addReservation(this);
+    }
+
+    public Reservation(ReservationRequest body){
+        this.book=body.getBook();
+        this.member=body.getMember();
     }
 
 
