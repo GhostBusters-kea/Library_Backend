@@ -1,14 +1,12 @@
 package com.project1.configuration;
 
-import com.project1.entity.Book;
-import com.project1.entity.Library;
-import com.project1.entity.Loan;
-import com.project1.entity.Member;
+import com.project1.entity.*;
 import com.project1.repository.LoanRepository;
 import com.project1.repository.MemberRepository;
 import com.project1.repository.ReservationRepository;
 
 import com.project1.repository.*;
+import com.project1.service.ReservationService;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Profile;
@@ -22,13 +20,15 @@ public class MakeTestData implements ApplicationRunner {
     LoanRepository loanRepository;
     BookRepository bookRepository;
     LibraryRepository libraryRepository;
+    ReservationService reservationService;
 
-    public MakeTestData(ReservationRepository reservationRepository, MemberRepository memberRepository, LoanRepository loanRepository, BookRepository bookRepository, LibraryRepository libraryRepository) {
+    public MakeTestData(ReservationRepository reservationRepository, MemberRepository memberRepository, LoanRepository loanRepository, BookRepository bookRepository, LibraryRepository libraryRepository, ReservationService reservationService) {
         this.reservationRepository = reservationRepository;
         this.memberRepository = memberRepository;
         this.loanRepository = loanRepository;
         this.bookRepository = bookRepository;
         this.libraryRepository = libraryRepository;
+        this.reservationService = reservationService;
     }
 
     public void makeData(){
@@ -41,6 +41,10 @@ public class MakeTestData implements ApplicationRunner {
                 "by","1111");
         Member c = new Member("hans","123@f.dk","dj","dd","dd","dd",
                 "by","1112");
+
+        memberRepository.save(a);
+        memberRepository.save(b);
+        memberRepository.save(c);
 
         // Libraries
         Library l1 = new Library("Vesterbro");
@@ -59,30 +63,49 @@ public class MakeTestData implements ApplicationRunner {
 
 
         // Books
-
-        Book book = new Book("393939","Animal Farm","George Orwell",
+        Book b1 = new Book("393939","Animal Farm","George Orwell",
                 "Gyldeldal","2020",l1);
 
-        Book book2 = new Book("393949","1984","George Orwell",
+        Book b2 = new Book("393949","1984","George Orwell",
                 "Gyldeldal","2020",l1);
 
+        Book b3= new Book("395549","Bla","George Orwell",
+                "Gyldeldal","2020",l1);
+
+        Book b4 = new Book("393999","Blabla","George Orwell",
+                "Gyldeldal","2020",l1);
+
+        bookRepository.save(b1);
+        bookRepository.save(b2);
+        bookRepository.save(b3);
+        bookRepository.save(b4);
+
+        // Reservations
+        Reservation r1 = new Reservation();
+        Reservation r2 = new Reservation();
+        Reservation r3 = new Reservation();
+        Reservation r4 = new Reservation();
+
+        r1.setBook(b1);
+        r2.setBook(b2);
+        r3.setBook(b3);
+        r4.setBook(b4);
+
+        r1.setMember(a);
+        r2.setMember(a);
+        r3.setMember(b);
+        r4.setMember(c);
+
+        reservationService.saveReservation(r1);
+        reservationService.saveReservation(r2);
+        reservationService.saveReservation(r3);
+        reservationService.saveReservation(r4);
 
 
-        bookRepository.save(book);
-        bookRepository.save(book2);
 
-
-
-
-
-
-
-
-
-
-
+/*
         Loan newLoan = new Loan();
-        loanRepository.save(newLoan);
+        loanRepository.save(newLoan);*/
 
 /*
 
