@@ -32,9 +32,7 @@ public class MakeTestData implements ApplicationRunner {
     }
 
     public void makeData(){
-
         /*
-
         Member b = new Member("ib","j@k.dk","jjj","Jens","Jensen",
                 "Gade","Kbh","1234");
 
@@ -51,7 +49,10 @@ public class MakeTestData implements ApplicationRunner {
         Loan newLoan = new Loan();
         loanRepository.save(newLoan);
 
+         */
 
+
+        /*
         Member a = new Member("ole","k@f.dk","djdj","Svend","Svendsen","Gade",
                 "by","1111");
         Member b = new Member("hans","123@f.dk","dj","dd","dd","dd",
@@ -85,16 +86,17 @@ public class MakeTestData implements ApplicationRunner {
 
          */
 
+
     }
 
     @Override
     public void run(ApplicationArguments args){
-        /*
+
         reservationRepository.deleteAll();
         memberRepository.deleteAll();
         bookRepository.deleteAll();
         libraryRepository.deleteAll();
-        makeData();*/
+        makeData();
     }
 
 }

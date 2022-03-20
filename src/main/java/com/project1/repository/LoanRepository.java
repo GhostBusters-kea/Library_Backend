@@ -11,4 +11,5 @@ import java.util.List;
 @Repository
 public interface LoanRepository extends JpaRepository<Loan, Integer> {
     List<Loan> findAllLoanByUsername(Member username);
+
 }
