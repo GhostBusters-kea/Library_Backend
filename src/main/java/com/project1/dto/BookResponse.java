@@ -31,6 +31,7 @@ public class BookResponse {
         this.title = book.getTitle();
         this.authors = book.getAuthors();
         this.publisher = book.getPublishYear();
+        this.publishYear = book.getPublishYear();
         if (allFields) {
             this.created = book.getCreated();
             this.edited = book.getEdited();
