@@ -49,7 +49,7 @@ class BookServiceTest {
     @Test
     void addBook() {
         bookRepository.save(new Book("23", "Name2", "jesep Hansen", "Forlaget martin", "3533",library));
-        assertEquals("e", );
+
     }
 
     @Test
