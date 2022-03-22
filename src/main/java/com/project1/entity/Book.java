@@ -2,10 +2,7 @@ package com.project1.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.project1.dto.BookRequest;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -15,8 +12,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Getter @Setter
-@AllArgsConstructor @NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class Book {
 
     @Id
@@ -64,6 +64,7 @@ public class Book {
     }
 
     public Book(BookRequest body) {
+        this.id = body.getId();
         this.isbnNumber = body.getIsbnNumber();
         this.title = body.getTitle();
         this.authors = body.getAuthors();
