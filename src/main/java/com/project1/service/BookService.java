@@ -31,7 +31,7 @@ public class BookService {
 
     //Tilføj fejlhåndtering
     public BookResponse getBook(int id, boolean all){
-        Book book = bookRepository.findById(id).orElseThrow();
+        Book book = bookRepository.findById(id).orElseThrow(()->new ClientException("Book not found", HttpStatus.NOT_FOUND));
         return new BookResponse(book, false);
     }
 
