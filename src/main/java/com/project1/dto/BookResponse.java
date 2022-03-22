@@ -27,6 +27,7 @@ public class BookResponse {
     LocalDateTime edited;
 
     public BookResponse(Book book, boolean allFields){
+        this.id = book.getId();
         this.isbnNumber = book.getIsbnNumber();
         this.title = book.getTitle();
         this.authors = book.getAuthors();
