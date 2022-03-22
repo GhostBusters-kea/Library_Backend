@@ -27,10 +27,11 @@ public class BookResponse {
     LocalDateTime edited;
 
     public BookResponse(Book book, boolean allFields){
+        this.id = book.getId();
         this.isbnNumber = book.getIsbnNumber();
         this.title = book.getTitle();
         this.authors = book.getAuthors();
-        this.publisher = book.getPublishYear();
+        this.publisher = book.getPublisher();
         this.publishYear = book.getPublishYear();
         if (allFields) {
             this.created = book.getCreated();
