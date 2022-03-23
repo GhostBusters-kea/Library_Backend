@@ -8,6 +8,7 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
@@ -34,13 +35,13 @@ public class Loan {
     //Auto set date when a loan is made
     @Column
     @CreationTimestamp
-    private LocalDateTime checkoutdate;
+    private LocalDate checkoutdate;
 
     @Column
-    private LocalDateTime duedate;
+    private LocalDate duedate;
 
     @Column
-    private LocalDateTime returneddate;
+    private LocalDate returneddate;
 
     /*
     public Loan(LoanRequest body) {
@@ -53,7 +54,7 @@ public class Loan {
 
      */
 
-    public Loan(Member username, LocalDateTime duedate, LocalDateTime returneddate) {
+    public Loan(Member username, LocalDate duedate, LocalDate returneddate) {
         this.username = username;
         this.duedate = duedate;
         this.returneddate = returneddate;

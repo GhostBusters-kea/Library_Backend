@@ -28,7 +28,7 @@ class LoanServiceTest {
     @Autowired
     LoanRepository loanRepository;
     LoanService loanService;
-
+/*
     @BeforeAll
     static void setUp(@Autowired LoanRepository loanRepository, @Autowired MemberRepository memberRepository) {
 
@@ -43,6 +43,8 @@ class LoanServiceTest {
         loanRepository.save(loan);
     }
 
+ */
+
     @BeforeEach
     public void setupService(){
         loanService = new LoanService(loanRepository);
@@ -55,7 +57,7 @@ class LoanServiceTest {
         assertEquals(1, loanResponseList.size());
         assertEquals("ole", loanResponseList.get(0).getMemberResponse().getUsername());
     }
-
+/*
     @Test
     void addLoan() {
         Member a = new Member("ole","k@f.dk","djdj","Svend","Svendsen","Gade",
@@ -64,6 +66,8 @@ class LoanServiceTest {
 
         //loanService.addLoan()
     }
+
+ */
 
     @Test
     void editLoan() {

@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -19,9 +20,9 @@ public class LoanRequest {
 
     private Book bookId;
 
-    private LocalDateTime checkoutdate;
+    private LocalDate checkoutdate;
 
-    private LocalDateTime duedate;
+    private LocalDate duedate;
 
-    private LocalDateTime returneddate;
+    private LocalDate returneddate;
 }
