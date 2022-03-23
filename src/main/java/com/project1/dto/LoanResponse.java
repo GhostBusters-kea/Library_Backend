@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,14 +19,14 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LoanResponse {
-    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss",shape = JsonFormat.Shape.STRING)
-    private LocalDateTime checkoutdate;
+    @JsonFormat(pattern = "dd-MM-yyyy",shape = JsonFormat.Shape.STRING)
+    private LocalDate checkoutdate;
 
-    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss",shape = JsonFormat.Shape.STRING)
-    private LocalDateTime duedate;
+    @JsonFormat(pattern = "dd-MM-yyyy",shape = JsonFormat.Shape.STRING)
+    private LocalDate duedate;
 
-    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss",shape = JsonFormat.Shape.STRING)
-    private LocalDateTime returneddate;
+    @JsonFormat(pattern = "dd-MM-yyyy",shape = JsonFormat.Shape.STRING)
+    private LocalDate returneddate;
 
     private MemberResponse memberResponse;
 
