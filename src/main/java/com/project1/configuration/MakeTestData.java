@@ -71,12 +71,12 @@
 //
 //
 //
-//        Member a = new Member("ole","k@f.dk","djdj","Svend","Svendsen","Gade",
-//                "by","1111");
-//        Member b = new Member("hans","123@f.dk","dj","dd","dd","dd",
-//                "by","1112");
-//        memberRepository.save(a);
-//        memberRepository.save(b);
+////        Member a = new Member("ole","k@f.dk","djdj","Svend","Svendsen","Gade",
+////                "by","1111");
+////        Member b = new Member("hans","123@f.dk","dj","dd","dd","dd",
+////                "by","1112");
+////        memberRepository.save(a);
+////        memberRepository.save(b);
 //        Book b2 = new Book("393949","1984","George Orwell",
 //                "Gyldeldal","2020",l1);
 //
@@ -116,17 +116,17 @@
 //
 //
 //
-//        Loan newLoan = new Loan();
-//        loanRepository.save(newLoan);
+////        Loan newLoan = new Loan();
+////        loanRepository.save(newLoan);
 //
 //
 //
-//        memberRepository.save(a);
-//        memberRepository.save(b);
+////        memberRepository.save(a);
+////        memberRepository.save(b);
 //
 //
-//        bookRepository.save(book);
-//        bookRepository.save(book2);
+////        bookRepository.save(book);
+////        bookRepository.save(book2);
 //
 //        Loan newLoan = new Loan();
 //        newLoan.setUsername(a);
@@ -146,10 +146,10 @@
 //    @Override
 //    public void run(ApplicationArguments args){
 //
-//        reservationRepository.deleteAll();
-//        memberRepository.deleteAll();
-//        bookRepository.deleteAll();
-//        libraryRepository.deleteAll();
+////        reservationRepository.deleteAll();
+////        memberRepository.deleteAll();
+////        bookRepository.deleteAll();
+////        libraryRepository.deleteAll();
 //        makeData();
 //    }
 //
