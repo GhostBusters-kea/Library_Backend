@@ -32,8 +32,11 @@ public class LoanResponse {
 
     private Book bookId;
 
+    private int id;
+
     //Get all loan info
     public LoanResponse(Loan loan){
+        this.id = loan.getId();
         this.checkoutdate = loan.getCheckoutdate();
         this.duedate = loan.getDuedate();
         this.returneddate = loan.getReturneddate();
