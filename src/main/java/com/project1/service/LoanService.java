@@ -57,9 +57,19 @@ public class LoanService {
         return new LoanResponse(loanToEdit);
     }
 
+    /*
     public void deleteLoan(int loanId){
         List<Loan> loanList = loanRepository.findById(loanId).stream().collect(Collectors.toList());
         loanRepository.deleteAllById((Iterable<? extends Integer>) loanList.remove(loanId));
 
+    }
+
+     */
+
+    public void deleteLoan(int loanId){
+        if(!loanRepository.existsById(loanId)){
+            throw new ClientException("Loan not found");
+        }
+        loanRepository.deleteById(loanId);
     }
 }
