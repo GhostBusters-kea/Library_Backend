@@ -20,8 +20,14 @@ Afslutningsvis giver gruppen udtryk for at sætte pris på gruppens sociale og f
 ### Branching Strategy:
 Feature Branching
 
-### Link to deployed project:
+### Link to deployed backend:
 https://kealibrary.azurewebsites.net
+
+### Link to deployed frontend:
+https://gray-smoke-0cdf54803.1.azurestaticapps.net/?fbclid=IwAR11-242iBgoHZnrYwJ1sKJkJVIWUcydAny5EjOLHUXpD-PHjVOxNKhvI2A#
+
+### Link to frontend repo:
+https://github.com/GhostBusters-kea/Library_Frontend
 
 ### Mini-sprint 1:
 * Entities for Book, Library, Loan, Member og Reservation
@@ -44,10 +50,10 @@ Each member must come up with a short description when the final deadline is rea
 ##### Kevin Funch ([@KevinFHansen](https://github.com/KevinFHansen))
 
 ##### Jonas Munk ([@jmunkc](https://github.com/jmunkc))
-* Opsætning af CI/CD Pipeline på Azure med Github Actions som Build server
+* Opsætning af CI/CD Pipeline på Azure med Github Actions som Build server af back- og front-end
 * Opsætning af ssh adgang til Azure VM med Ubuntu server og Docker container som køre MySQL
 * Opsætning af forbindelse mellem App og MySQL server med miljø variabler 
-* Backend kode relateret til Member
+* Backend + frontend kode relateret til Member
 
 ##### Lars Brogaard Kaiser ([@mrbrogaardkaiser](https://github.com/mrbrogaardkaiser))
 * Oprettet GitHub repo og updatet README
