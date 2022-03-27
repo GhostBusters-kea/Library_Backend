@@ -48,6 +48,8 @@ Each member must come up with a short description when the final deadline is rea
 ##### Michael Dyvad ([@MichaelDyvad](https://github.com/MichaelDyvad))
 
 ##### Kevin Funch ([@KevinFHansen](https://github.com/KevinFHansen))
+* Backend-kode relateret til "Book"
+* Frontend-kode relateret til "Book"
 
 ##### Jonas Munk ([@jmunkc](https://github.com/jmunkc))
 * Opsætning af CI/CD Pipeline på Azure med Github Actions som Build server af back- og front-end
