@@ -46,7 +46,9 @@ https://github.com/GhostBusters-kea/Library_Frontend
 Each member must come up with a short description when the final deadline is reached. Initially, Each of you should push a commit with just your name You should all add your GitHub usename in parenthesis next to your name, so I know who is who, when I check commit messages
 
 ##### Michael Dyvad ([@MichaelDyvad](https://github.com/MichaelDyvad))
-
+* Backend-kode relateret til "Loan
+* Frontend-kode relateret til "Loan"
+* Opætning af standard Javascript index filer og mapper
 ##### Kevin Funch ([@KevinFHansen](https://github.com/KevinFHansen))
 * Backend-kode relateret til "Book"
 * Frontend-kode relateret til "Book"
